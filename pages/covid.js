@@ -1,4 +1,3 @@
-import {ReactElement} from 'react';
 import Image from "next/image";
 import GeneralLayout from './../components/layouts/GeneralLayout';
 import CovidGraphic from "./../images/covid.jpeg";
@@ -125,9 +124,5 @@ function Covid() {
         </div>
     )
 }
-
-Covid.getLayout = function getLayout(page) {
-    return <GeneralLayout>{page}</GeneralLayout>;
-};
 
 export default Covid;
