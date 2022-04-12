@@ -34,16 +34,16 @@ export default async function handler(req, res) {
         querySnapshot.forEach((doc) => {
             console.log(doc.data())
             var student = {
-                "Name": doc.data().Name,
-                "Note": doc.data().Note,
-                "clear": doc.data().clear,
-                "exposed": doc.data().exposed,
-                "covid": doc.data().covid
+                Name : doc.data().Name,
+                Note : doc.data().Note,
+                Clear : doc.data().clear,
+                exposed : doc.data().exposed,
+                covid: doc.data().covid
             }
             roster.push(student)
         })
         console.log(roster)
-        var roster_str = JSON.stringify(roster)
-        res.end(`Class: ${class_ref.id}, Students: ${roster_str}}`)
+        // var roster_str = JSON.stringify(roster)
+        res.json( {Class: class_ref.id, Students: roster})
     }
 }

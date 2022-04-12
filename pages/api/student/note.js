@@ -26,12 +26,13 @@ export default async function handler(req, res) {
     const class_id = req.query.class
     console.log(student_id)
     console.log(class_id)
+    console.log('here')
     if (req.method === 'POST') {
         var classRef = doc(collection(db, "Rosters"), class_id)
         var studentRef = doc(collection(classRef, "Students"), student_id)
-        updateDoc(studentRef, {
-            "Note": req.body
-        })
+        console.log('inpost')
+        console.log(req.body)
+        updateDoc(studentRef, req.body)
 
         res.end(`Updated note: ${student_id}, class id: ${class_id}`)
     } else if (req.method === 'GET') {

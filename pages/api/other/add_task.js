@@ -27,8 +27,8 @@ export default async function handler(req, res) {
         var desc = req.body.desc
         console.log(`Name: ${name}, Desc: ${desc}`)
         const docRef = await addDoc(collection(db, "Tasks"), {
-            "name": name,
-            "description": desc
+            name: name,
+            description: desc
         });
 
         res.end(`${docRef.id}`)

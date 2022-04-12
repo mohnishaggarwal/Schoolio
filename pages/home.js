@@ -25,7 +25,7 @@ function Home() {
                 {
                     login ?
                     <>
-                    <div className="w-36 py-6 px-8 bg-blue-600 my-4 text-white text-3xl font-bold">Tasks</div>
+                    <div className="w-36 py-6 px-8 bg-blue-600 my-4 text-white text-3xl font-bold" onClick={() => router.push("tasks")}>Tasks</div>
                     <div className="w-36 py-6 px-8 bg-blue-600 my-4 text-white text-3xl font-bold">Zoom Links</div>
                     <div className="w-36 py-6 px-8 bg-blue-600 my-4 text-white text-3xl font-bold" onClick={() => router.push("covid")}>COVID</div>
                     </>

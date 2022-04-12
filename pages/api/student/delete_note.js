@@ -30,7 +30,7 @@ export default async function handler(req, res) {
         var classRef = doc(collection(db, "Rosters"), class_id)
         var studentRef = doc(collection(classRef, "Students"), student_id)
         updateDoc(studentRef, {
-            "Note": null
+            Note: null
         })
 
         res.end(`Deleted note: ${student_id}, class id: ${class_id}`)

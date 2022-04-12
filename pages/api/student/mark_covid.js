@@ -31,9 +31,9 @@ export default function handler(req, res) {
     var classRef = doc(collection(db, "Rosters"), class_id)
     var studentRef = doc(collection(classRef, "Students"), student_id)
     updateDoc(studentRef, {
-        "exposed": false,
-        "covid": true,
-        "clear": false
+        exposed: false,
+        covid: true,
+        clear: false
     })
 
     res.end(`Marked student covid: ${student_id}, class id: ${class_id}`)

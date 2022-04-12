@@ -29,8 +29,8 @@ export default async function handler(req, res) {
         querySnapshot.forEach((doc) => {
             console.log(doc.data())
             var zoom_data = {
-                "name": doc.data().name,
-                "desc": doc.data().description
+                name: doc.data().name,
+                desc: doc.data().description
             }
             tasks.push(zoom_data)
         })

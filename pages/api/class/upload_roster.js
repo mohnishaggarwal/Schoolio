@@ -32,11 +32,11 @@ export default function handler(req, res) {
         created_students = []
         for (let i = 0; i < list.length; i++) {
             const student_ref = await addDoc(collection(class_ref, "Student"), {
-                "name": list[i],
-                "Note": null,
-                "clear": true,
-                "covid": false,
-                "exposed": false
+                Name: list[i],
+                Note: null,
+                clear: true,
+                covid: false,
+                exposed: false
             })
             created_students.push(student_ref.id)
         }

@@ -26,8 +26,8 @@ export default async function handler(req, res) {
         var name = req.body.name
         var link = req.body.link
         const docRef = await addDoc(collection(db, "Zoom"), {
-            "name": name,
-            "link": link
+            name: name,
+            link: link
         })
 
         res.end(`${docRef.id}`)
