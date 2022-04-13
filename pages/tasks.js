@@ -1,30 +1,33 @@
-import Image from "next/image";
+import {useState} from "react";
 import GeneralLayout from './../components/layouts/GeneralLayout';
+import addTaskModalTsx from "../components/AddTaskModal.tsx";
+import AddTaskModalTsx from "../components/AddTaskModal.tsx";
 
 const teacherName = "Alex";
 
-const schedule = [
-    {
-        day: "Monday",
-        beforeClass: ["Prepare Verbs Lesson Slides", "Write Algebra HW"],
-        duringClass: ["Prepare Verbs Lesson Slides", "Write Algebra HW"],
-        afterClass: ["Grade Algebra HW"]
-    },
-    {
-        day: "Tuesday",
-        beforeClass: ["Prepare Nouns Lesson"],
-        duringClass: [],
-        afterClass: ["Grade nouns HW"]
-    },
-    {
-        day: "Wednesday",
-        beforeClass: [],
-        duringClass: [],
-        afterClass: ["Prepare Break HW"]
-    },
-]
-
 function Tasks() {
+    const [schedule, setSchedule] = useState([
+        {
+            day: "Monday",
+            "beforeClass": ["Prepare Verbs Lesson Slides", "Write Algebra HW"],
+            "duringClass": ["Prepare Verbs Lesson Slides", "Write Algebra HW"],
+            "afterClass": ["Grade Algebra HW"]
+        },
+        {
+            day: "Tuesday",
+            "beforeClass": ["Prepare Nouns Lesson"],
+            "duringClass": [],
+            "afterClass": ["Grade nouns HW"]
+        },
+        {
+            day: "Wednesday",
+            "beforeClass": [],
+            "duringClass": [],
+            "afterClass": ["Prepare Break HW"]
+        }
+    ]);
+    const [modalOpen, setModelOpen] = useState(false);
+
     return (
         <div className="mx-16">
             <GeneralLayout/>
@@ -33,6 +36,9 @@ function Tasks() {
                 <p className="font-bold text-xl text-yellow-500 mr-8">
                     Hello {teacherName}, Today is Wednesday March 31, 2022
                 </p>
+                <button onClick={() => setModelOpen(true)} className="rounded-lg bg-green-500 py-2 px-4">
+                    <p className="font-semibold">Add Task</p>
+                </button>
             </div>
 
             <div className="mt-4">
@@ -70,6 +76,7 @@ function Tasks() {
                     </div>
                 ))}
             </div>
+            <AddTaskModalTsx open={modalOpen} close={() => setModelOpen(false)} setSchedule={setSchedule} schedule={schedule} />
         </div>
     )
 }
