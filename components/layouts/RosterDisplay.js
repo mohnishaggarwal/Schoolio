@@ -1,6 +1,5 @@
 import React from "react";
 import router from "next/router";
-import CovidCount from "./CovidCount";
 import CovidGraphic from "../../images/covid.jpeg";
 import Image from "next/image";
 

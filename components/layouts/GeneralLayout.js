@@ -7,10 +7,10 @@ const GeneralLayout = ({children}) => {
     return (
         <>
             <div className="w-full h-24 flex justify-evenly items-center text-blue-600 border-b-2">
-                <a onClick={() => router.push("home")}>Schoolio</a>
-                <a onClick={() => router.push("tasks")}>Tasks</a>
-                <a onClick={() => router.push("zoom-links")}>Zoom links</a>
-                <a onClick={() => router.push("covid")}>COVID</a>
+                <a className="cursor-pointer" onClick={() => router.push("profile")}>Profile</a>
+                <a className="cursor-pointer" onClick={() => router.push("tasks")}>Tasks</a>
+                <a className="cursor-pointer" onClick={() => router.push("zoom-links")}>Zoom links</a>
+                <a className="cursor-pointer" onClick={() => router.push("covid")}>COVID</a>
 
             </div>
             <main>{children}</main>

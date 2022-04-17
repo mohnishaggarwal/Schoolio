@@ -1,7 +1,6 @@
 import Image from "next/image";
 import GeneralLayout from './../components/layouts/GeneralLayout';
 import RosterDisplay from "../components/layouts/RosterDisplay";
-import CovidCount from "../components/layouts/CovidCount";
 import CovidGraphic from "./../images/covid.jpeg";
 
 const classes = ["Parson's Elementary 4th Grade"];
