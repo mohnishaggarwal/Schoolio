@@ -1,7 +1,6 @@
 import {useState} from "react";
 import GeneralLayout from './../components/layouts/GeneralLayout';
-import addTaskModalTsx from "../components/AddTaskModal.tsx";
-import AddTaskModalTsx from "../components/AddTaskModal.tsx";
+import AddTaskModal from "../components/AddTaskModal.js";
 
 const teacherName = "Alex";
 
@@ -76,7 +75,7 @@ function Tasks() {
                     </div>
                 ))}
             </div>
-            <AddTaskModalTsx open={modalOpen} close={() => setModelOpen(false)} setSchedule={setSchedule} schedule={schedule} />
+            <AddTaskModal open={modalOpen} close={() => setModelOpen(false)} setSchedule={setSchedule} schedule={schedule} />
         </div>
     )
 }

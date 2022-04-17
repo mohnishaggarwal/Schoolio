@@ -1,20 +1,21 @@
-import { useEffect } from "react";
-import router from "next/router";
+import {useEffect} from "react";
+import {useRouter} from "next/router";
 
-const GeneralLayout = ({ children }) => {
+const GeneralLayout = ({children}) => {
+    const router = useRouter();
 
-  return (
-    <>
-      <div className="w-full h-24 flex justify-evenly items-center text-blue-600 border-b-2">
-        <a href="http://localhost:3000/home#">Schoolio</a>
-        <a href="http://localhost:3000/tasks">Tasks</a>
-        <a href="">Zoom links</a>
-        <a href="http://localhost:3000/covid">COVID</a>
+    return (
+        <>
+            <div className="w-full h-24 flex justify-evenly items-center text-blue-600 border-b-2">
+                <a onClick={() => router.push("home")}>Schoolio</a>
+                <a onClick={() => router.push("tasks")}>Tasks</a>
+                <a onClick={() => router.push("zoom-links")}>Zoom links</a>
+                <a onClick={() => router.push("covid")}>COVID</a>
 
-      </div>
-      <main>{children}</main>
-    </>
-  );
+            </div>
+            <main>{children}</main>
+        </>
+    );
 };
 
 export default GeneralLayout;

@@ -141,8 +141,6 @@ const AddTaskModal = (props) => {
                                     </div>
                                     <div className="flex justify-center items-center my-2 mb-4">
                                         <input
-                                            id="firstName"
-                                            name="firstName"
                                             type="text"
                                             onChange={(e) => {
                                                 setInput(e.target.value);
