@@ -31,7 +31,7 @@ function Home() {
                     </>
                     :
                         <a href="#">
-                            <div className="py-6 px-8 bg-blue-600 text-white text-3xl font-bold">Get Started</div>
+                            <div className="py-6 px-8 bg-blue-600 text-white text-3xl font-bold" onClick={() => router.push("demo")}>Get Started</div>
                         </a>
                 }
             </div>
